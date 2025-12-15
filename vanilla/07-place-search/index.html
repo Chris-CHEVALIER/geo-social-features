@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 - Recherche de lieu sur la carte</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Notre CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recherche de lieu sur la carte</h1>
+
+        <div class="search-container">
+            <form id="searchForm">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Entrez une ville, adresse ou lieu (ex: Paris, Tour Eiffel...)"
+                    required
+                />
+                <button type="submit">Rechercher</button>
+            </form>
+            <div id="searchMessage" class="message"></div>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Notre script -->
+    <script src="script.js"></script>
+</body>
+</html>
