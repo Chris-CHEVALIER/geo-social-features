@@ -1,0 +1,245 @@
+/* ==========================================
+   RESET ET BASE
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   CONTENU PRINCIPAL
+   ========================================== */
+
+.main-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.content-wrapper h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.content-wrapper p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.open-btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.open-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.open-btn:active {
+    transform: translateY(0);
+}
+
+/* ==========================================
+   OVERLAY (fond semi-transparent)
+   ========================================== */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 998;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==========================================
+   DRAWER (tiroir)
+   ========================================== */
+
+.drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 85vh;
+    background: white;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+
+    /* Position initiale : caché sous l'écran */
+    transform: translateY(100%);
+
+    /* Animation fluide */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Désactive la transition pendant le drag */
+    /* Cette classe sera ajoutée/retirée dynamiquement en JS */
+}
+
+/* État ouvert du drawer */
+.drawer.open {
+    transform: translateY(0);
+}
+
+/* Désactive la transition pendant le drag */
+.drawer.dragging {
+    transition: none;
+}
+
+/* ==========================================
+   POIGNÉE DU DRAWER
+   ========================================== */
+
+.drawer-handle {
+    padding: 1rem;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    touch-action: none; /* Empêche le scroll natif pendant le drag */
+}
+
+.drawer-handle:active {
+    cursor: grabbing;
+}
+
+.handle-bar {
+    width: 40px;
+    height: 5px;
+    background: #ddd;
+    border-radius: 10px;
+}
+
+/* ==========================================
+   CONTENU DU DRAWER
+   ========================================== */
+
+.drawer-content {
+    padding: 0 2rem 2rem 2rem;
+    overflow-y: auto;
+    max-height: calc(85vh - 3rem);
+}
+
+.drawer-content h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.drawer-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================
+   CARTES D'INFORMATION
+   ========================================== */
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   BOUTON DE FERMETURE
+   ========================================== */
+
+.close-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: 1rem;
+}
+
+.close-btn:hover {
+    background: #e0e0e0;
+}
+
+.close-btn:active {
+    background: #d0d0d0;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+    .content-wrapper h1 {
+        font-size: 2rem;
+    }
+
+    .content-wrapper p {
+        font-size: 1rem;
+    }
+
+    .drawer-content {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+}

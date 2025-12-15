@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipeable Edge Drawer - JavaScript Vanilla</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Contenu principal de la page -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            <h1>🎯 Swipeable Edge Drawer</h1>
+            <p>Un tiroir interactif en bas de l'écran</p>
+            <p>Utilise le bouton ou glisse le tiroir avec ta souris/doigt</p>
+        </div>
+
+        <!-- Bouton pour ouvrir le drawer -->
+        <button id="openDrawerBtn" class="open-btn">
+            📋 Ouvrir le panneau
+        </button>
+    </main>
+
+    <!-- Overlay sombre (fond semi-transparent) -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Le drawer (tiroir) -->
+    <div id="drawer" class="drawer">
+        <!-- Poignée visuelle pour indiquer qu'on peut glisser -->
+        <div class="drawer-handle">
+            <div class="handle-bar"></div>
+        </div>
+
+        <!-- Contenu du drawer -->
+        <div class="drawer-content">
+            <h2>🗂️ Panneau d'informations</h2>
+            <p>Ce tiroir peut être glissé vers le haut ou vers le bas.</p>
+            <p>Vous pouvez également cliquer sur l'overlay pour le fermer.</p>
+
+            <div class="info-cards">
+                <div class="card">
+                    <h3>🖱️ Souris</h3>
+                    <p>Cliquez et glissez la poignée</p>
+                </div>
+                <div class="card">
+                    <h3>📱 Touch</h3>
+                    <p>Faites glisser avec votre doigt</p>
+                </div>
+                <div class="card">
+                    <h3>⌨️ Bouton</h3>
+                    <p>Utilisez le bouton pour ouvrir/fermer</p>
+                </div>
+            </div>
+
+            <button id="closeDrawerBtn" class="close-btn">
+                ✕ Fermer
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
