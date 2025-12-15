@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heatmap personnalisée - Leaflet</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Notre CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Heatmap avec couleurs personnalisées</h1>
+            <p>Visualisation de densité avec gradient de couleurs sur mesure</p>
+        </header>
+
+        <main>
+            <!-- La carte s'affiche ici -->
+            <div id="map"></div>
+
+            <!-- Panneau d'information -->
+            <aside class="info-panel">
+                <h2>📊 Configuration</h2>
+                <div class="param">
+                    <strong>Gradient :</strong> Bleu → Vert → Jaune → Rouge
+                </div>
+                <div class="param">
+                    <strong>Radius :</strong> 25 pixels
+                </div>
+                <div class="param">
+                    <strong>Blur :</strong> 15 pixels
+                </div>
+                <div class="param">
+                    <strong>Max Zoom :</strong> 18
+                </div>
+                <div class="legend">
+                    <h3>Légende</h3>
+                    <div class="legend-bar"></div>
+                    <div class="legend-labels">
+                        <span>Faible</span>
+                        <span>Moyenne</span>
+                        <span>Forte</span>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Leaflet.heat plugin -->
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+
+    <!-- Notre script -->
+    <script src="script.js"></script>
+</body>
+</html>
