@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changer le style d'une carte Leaflet</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Notre CSS personnalisé -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗺️ Changeur de style de carte</h1>
+            <p class="subtitle">Découvrez comment changer l'apparence d'une carte OpenStreetMap avec Leaflet</p>
+        </header>
+
+        <main>
+            <!-- Panneau de contrôle -->
+            <div class="controls">
+                <h2>Choisissez un style de carte :</h2>
+                <div class="button-group">
+                    <button class="style-btn active" data-style="standard">
+                        🌍 Standard
+                    </button>
+                    <button class="style-btn" data-style="light">
+                        ☀️ Clair
+                    </button>
+                    <button class="style-btn" data-style="dark">
+                        🌙 Sombre
+                    </button>
+                    <button class="style-btn" data-style="watercolor">
+                        🎨 Aquarelle
+                    </button>
+                </div>
+
+                <div class="info-box">
+                    <strong>Style actif :</strong> <span id="current-style">Standard</span>
+                </div>
+            </div>
+
+            <!-- Carte Leaflet -->
+            <div id="map"></div>
+        </main>
+
+        <footer>
+            <div class="explanation">
+                <h3>💡 Comment ça marche ?</h3>
+                <p>
+                    On ne peut pas "recolorer" OpenStreetMap directement.
+                    À la place, on change le <strong>fournisseur de tuiles</strong> (tileset)
+                    qui affiche différents styles de rendu de la même carte.
+                </p>
+                <p>
+                    Chaque bouton charge un tileset différent avec son propre design !
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Notre script personnalisé -->
+    <script src="script.js"></script>
+</body>
+</html>

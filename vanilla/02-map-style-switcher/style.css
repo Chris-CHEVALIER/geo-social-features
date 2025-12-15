@@ -1,0 +1,171 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* En-tête */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Contenu principal */
+main {
+    padding: 30px;
+}
+
+/* Panneau de contrôle */
+.controls {
+    margin-bottom: 25px;
+}
+
+.controls h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Groupe de boutons */
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.style-btn {
+    flex: 1;
+    min-width: 140px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.style-btn:hover {
+    background: #f0f4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.style-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+/* Boîte d'information */
+.info-box {
+    padding: 12px 20px;
+    background: #f0f4ff;
+    border-left: 4px solid #667eea;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+#current-style {
+    color: #667eea;
+    font-weight: 700;
+}
+
+/* Carte */
+#map {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Pied de page */
+footer {
+    background: #f8f9fa;
+    padding: 30px;
+    border-top: 1px solid #e9ecef;
+}
+
+.explanation h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.explanation p {
+    margin-bottom: 10px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.explanation strong {
+    color: #764ba2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .style-btn {
+        width: 100%;
+        min-width: unset;
+    }
+
+    #map {
+        height: 400px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+}
