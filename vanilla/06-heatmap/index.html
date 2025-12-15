@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heatmap avec Leaflet</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Notre CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔥 Carte de chaleur (Heatmap)</h1>
+            <p>Visualisation de la densité de points d'intérêt sur une carte</p>
+        </header>
+
+        <!-- Carte Leaflet -->
+        <div id="map"></div>
+
+        <footer>
+            <div class="info-box">
+                <h3>À propos de cette heatmap</h3>
+                <p>Cette carte de chaleur représente la densité de cafés à Paris.</p>
+                <p>Les zones rouges indiquent une forte concentration, les zones bleues une faible concentration.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Plugin Leaflet.heat -->
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+
+    <!-- Notre script -->
+    <script src="script.js"></script>
+</body>
+</html>
