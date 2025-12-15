@@ -3,52 +3,62 @@ import { Container, Typography, Button, Box } from '@mui/material';
 import SwipeableEdgeDrawer from '../components/SwipeableEdgeDrawer';
 
 function App() {
-  // État pour contrôler l'ouverture/fermeture du drawer
+  // 📌 useState : crée une variable d'état "isDrawerOpen"
+  // - false au départ = le drawer est fermé
+  // - setIsDrawerOpen() permet de changer cette valeur
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  // Fonction pour ouvrir le drawer
-  const handleOpenDrawer = () => {
+  // 📌 Fonction qui met isDrawerOpen à true pour ouvrir le drawer
+  const openDrawer = () => {
     setIsDrawerOpen(true);
   };
 
-  // Fonction pour fermer le drawer
-  const handleCloseDrawer = () => {
+  // 📌 Fonction qui met isDrawerOpen à false pour fermer le drawer
+  const closeDrawer = () => {
     setIsDrawerOpen(false);
   };
 
   return (
     <Container maxWidth="sm">
-      <Box sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        gap: 3
-      }}>
-        <Typography variant="h3" component="h1" gutterBottom>
+      {/* 📌 Box : conteneur pour centrer le contenu à l'écran */}
+      <Box
+        sx={{
+          minHeight: '100vh',        // Hauteur minimum = toute la hauteur de l'écran
+          display: 'flex',           // Utilise flexbox pour le layout
+          flexDirection: 'column',   // Empile les éléments verticalement
+          justifyContent: 'center',  // Centre verticalement
+          alignItems: 'center',      // Centre horizontalement
+          textAlign: 'center',       // Texte centré
+          gap: 3                     // Espace entre les éléments
+        }}
+      >
+        {/* 📌 Titre principal */}
+        <Typography variant="h3" component="h1">
           Swipeable Edge Drawer
         </Typography>
 
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-          Cliquez sur le bouton ci-dessous ou swipez depuis le bas de l'écran
-          pour ouvrir le drawer.
+        {/* 📌 Texte d'explication */}
+        <Typography variant="body1" color="text.secondary">
+          Cliquez sur le bouton ou swipez depuis le bas de l'écran
         </Typography>
 
+        {/* 📌 Bouton qui appelle openDrawer() quand on clique dessus */}
         <Button
           variant="contained"
           size="large"
-          onClick={handleOpenDrawer}
+          onClick={openDrawer}
         >
           Ouvrir le drawer
         </Button>
 
-        {/* Le composant Drawer avec les props nécessaires */}
+        {/* 📌 Le composant Drawer :
+            - open : lui dit s'il doit être ouvert ou fermé
+            - onOpen : fonction à appeler quand on l'ouvre
+            - onClose : fonction à appeler quand on le ferme */}
         <SwipeableEdgeDrawer
           open={isDrawerOpen}
-          onOpen={handleOpenDrawer}
-          onClose={handleCloseDrawer}
+          onOpen={openDrawer}
+          onClose={closeDrawer}
         />
       </Box>
     </Container>

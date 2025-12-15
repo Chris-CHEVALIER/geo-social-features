@@ -1,4 +1,39 @@
-# React + Vite
+# Swipeable Drawer Component
+
+Composant React de tiroir coulissant (drawer) avec effet de balayage, utilisant Material-UI.
+
+## Comment intégrer ce composant dans votre projet React
+
+Pour copier ce composant dans votre propre projet React existant, suivez ces étapes :
+
+1. **Installer les dépendances Material-UI** (si ce n'est pas déjà fait) :
+   ```bash
+   npm install @mui/material @emotion/react @emotion/styled
+   ```
+
+2. **Copier le fichier du composant** :
+   - Copiez le fichier `components/SwipeableEdgeDrawer.jsx` dans votre dossier de composants
+
+3. **Importer et utiliser le composant** :
+   ```jsx
+   import SwipeableEdgeDrawer from './components/SwipeableEdgeDrawer';
+
+   function App() {
+     return (
+       <div>
+         <SwipeableEdgeDrawer />
+       </div>
+     );
+   }
+   ```
+
+4. **Personnaliser** :
+   - Modifiez le contenu dans la section du drawer selon vos besoins
+   - Ajustez les styles et les couleurs à votre charte graphique
+
+---
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
