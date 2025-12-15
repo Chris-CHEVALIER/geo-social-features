@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de lieu avec géocodage</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Notre CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Recherche de lieu</h1>
+            <p>Recherchez n'importe quel lieu dans le monde et visualisez-le sur la carte</p>
+        </header>
+
+        <!-- Formulaire de recherche -->
+        <div class="search-container">
+            <form id="searchForm">
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Ex: Paris, Tour Eiffel, Tokyo, 5 rue de la Paix..."
+                        required
+                    >
+                    <button type="submit" id="searchButton">
+                        Rechercher
+                    </button>
+                </div>
+            </form>
+
+            <!-- Message de résultat / erreur -->
+            <div id="message" class="message hidden"></div>
+        </div>
+
+        <!-- Carte Leaflet -->
+        <div id="map"></div>
+
+        <footer>
+            <p>
+                <strong>Géocodage :</strong> transformation d'une adresse en coordonnées GPS<br>
+                <small>Propulsé par Nominatim (OpenStreetMap) et Leaflet</small>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Notre JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
