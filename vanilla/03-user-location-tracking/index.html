@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi de position en temps réel</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Notre CSS personnalisé -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📍 Suivi de position en temps réel</h1>
+            <p class="subtitle">Utilisez l'API de géolocalisation du navigateur pour suivre votre position sur une carte</p>
+        </header>
+
+        <main>
+            <!-- Statut de la géolocalisation -->
+            <div class="status-box" id="status-box">
+                <div class="status-icon">⏳</div>
+                <div class="status-text">
+                    <strong id="status-title">En attente...</strong>
+                    <p id="status-message">Cliquez sur "Démarrer le suivi" pour commencer</p>
+                </div>
+            </div>
+
+            <!-- Contrôles -->
+            <div class="controls">
+                <button id="start-tracking" class="btn btn-primary">
+                    🎯 Démarrer le suivi
+                </button>
+                <button id="stop-tracking" class="btn btn-secondary" disabled>
+                    ⏹️ Arrêter le suivi
+                </button>
+            </div>
+
+            <!-- Informations de position -->
+            <div class="info-panel" id="info-panel" style="display: none;">
+                <h3>📊 Informations de position</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Latitude :</span>
+                        <span class="info-value" id="latitude">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Longitude :</span>
+                        <span class="info-value" id="longitude">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Précision :</span>
+                        <span class="info-value" id="accuracy">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dernière mise à jour :</span>
+                        <span class="info-value" id="timestamp">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Leaflet -->
+            <div id="map"></div>
+        </main>
+
+        <footer>
+            <div class="explanation">
+                <h3>💡 Comment ça marche ?</h3>
+                <p>
+                    Cette démo utilise <strong>navigator.geolocation.watchPosition()</strong>,
+                    une API native du navigateur qui surveille votre position en temps réel.
+                </p>
+                <p>
+                    À chaque déplacement, le marqueur sur la carte se met à jour automatiquement.
+                    Leaflet ne fait qu'afficher la position, c'est le navigateur qui la calcule !
+                </p>
+                <p class="warning">
+                    ⚠️ La géolocalisation nécessite HTTPS (ou localhost) et votre autorisation explicite.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Notre script personnalisé -->
+    <script src="script.js"></script>
+</body>
+</html>
