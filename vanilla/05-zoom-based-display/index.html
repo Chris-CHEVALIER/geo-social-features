@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affichage adaptatif selon le zoom - Leaflet</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Notre CSS personnalisé -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Affichage adaptatif selon le zoom</h1>
+            <p>Zoomez et dézoomez pour voir apparaître différents niveaux d'information</p>
+        </header>
+
+        <!-- Indicateur de niveau de zoom -->
+        <div class="zoom-indicator">
+            <div class="zoom-info">
+                <span class="label">Niveau de zoom :</span>
+                <span id="currentZoom" class="zoom-value">11</span>
+            </div>
+            <div class="zoom-description">
+                <span id="zoomDescription" class="description">Vue générale de la région</span>
+            </div>
+        </div>
+
+        <!-- Conteneur de la carte Leaflet -->
+        <div id="map"></div>
+
+        <!-- Légende explicative -->
+        <div class="legend">
+            <h3>Légende des niveaux d'affichage</h3>
+            <div class="legend-item">
+                <span class="color-box general"></span>
+                <div class="legend-text">
+                    <strong>Zoom 1-11 : Vue générale</strong>
+                    <p>Marqueurs de grandes villes uniquement</p>
+                </div>
+            </div>
+            <div class="legend-item">
+                <span class="color-box intermediate"></span>
+                <div class="legend-text">
+                    <strong>Zoom 12-14 : Vue intermédiaire</strong>
+                    <p>Quartiers et points d'intérêt principaux</p>
+                </div>
+            </div>
+            <div class="legend-item">
+                <span class="color-box detailed"></span>
+                <div class="legend-text">
+                    <strong>Zoom 15+ : Vue détaillée</strong>
+                    <p>Tous les détails (cafés, boutiques, etc.)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Notre script personnalisé -->
+    <script src="script.js"></script>
+</body>
+</html>
