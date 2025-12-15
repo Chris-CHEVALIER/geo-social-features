@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modale au clic sur carte - Leaflet</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Notre CSS personnalisé -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Clic sur la carte pour afficher les coordonnées</h1>
+            <p>Cliquez n'importe où sur la carte pour ouvrir une modale avec les coordonnées</p>
+        </header>
+
+        <!-- Conteneur de la carte Leaflet -->
+        <div id="map"></div>
+
+        <!-- Modale (cachée par défaut) -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Coordonnées du point cliqué</h2>
+                    <button id="closeModal" class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="coordinate-info">
+                        <div class="coordinate-item">
+                            <span class="label">Latitude :</span>
+                            <span id="latitude" class="value">--</span>
+                        </div>
+                        <div class="coordinate-item">
+                            <span class="label">Longitude :</span>
+                            <span id="longitude" class="value">--</span>
+                        </div>
+                    </div>
+                    <p class="info-text">
+                        Ces coordonnées correspondent au point exact où vous avez cliqué sur la carte.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button id="closeModalFooter" class="button-primary">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Notre script personnalisé -->
+    <script src="script.js"></script>
+</body>
+</html>
