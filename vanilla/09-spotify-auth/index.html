@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify OAuth 2.0 PKCE - Exemple Pédagogique</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Avertissement pédagogique -->
+        <div class="warning-banner">
+            <h3>⚠️ PROJET PÉDAGOGIQUE UNIQUEMENT</h3>
+            <p>Cet exemple est destiné à l'apprentissage d'OAuth 2.0 avec PKCE. <strong>Ne JAMAIS utiliser en production.</strong></p>
+        </div>
+
+        <!-- En-tête -->
+        <header>
+            <h1>🎵 Authentification Spotify avec OAuth 2.0 PKCE</h1>
+            <p class="subtitle">Implémentation vanilla JavaScript sans backend</p>
+        </header>
+
+        <!-- Section de configuration -->
+        <section id="config-section" class="card">
+            <h2>⚙️ Configuration</h2>
+            <p class="info-text">
+                Avant de commencer, créez une application sur le
+                <a href="https://developer.spotify.com/dashboard" target="_blank">Spotify Developer Dashboard</a>
+            </p>
+
+            <div class="form-group">
+                <label for="client-id-input">Client ID Spotify :</label>
+                <input
+                    type="text"
+                    id="client-id-input"
+                    placeholder="Collez votre Client ID ici"
+                    class="input-field"
+                >
+                <button id="save-client-id-btn" class="btn btn-primary">
+                    Enregistrer le Client ID
+                </button>
+            </div>
+
+            <div class="info-box">
+                <strong>Important :</strong> Ajoutez cette URL dans les "Redirect URIs" de votre app Spotify :
+                <code id="redirect-uri-display"></code>
+            </div>
+        </section>
+
+        <!-- Section de connexion -->
+        <section id="login-section" class="card hidden">
+            <h2>🔐 Étape 1 : Authentification</h2>
+            <p>Cliquez sur le bouton ci-dessous pour démarrer le flux OAuth 2.0 avec PKCE.</p>
+            <button id="login-btn" class="btn btn-primary btn-large">
+                Se connecter à Spotify
+            </button>
+
+            <!-- Explication pédagogique du flux -->
+            <div class="explanation-box">
+                <h3>📚 Ce qui va se passer :</h3>
+                <ol>
+                    <li><strong>Génération PKCE</strong> : création d'un <code>code_verifier</code> aléatoire et de son <code>code_challenge</code> (hash SHA-256)</li>
+                    <li><strong>Redirection Spotify</strong> : vous serez redirigé vers Spotify pour autoriser l'accès</li>
+                    <li><strong>Retour avec code</strong> : Spotify renvoie un code d'autorisation temporaire</li>
+                    <li><strong>Échange code/token</strong> : le code est échangé contre un <code>access_token</code> via l'API Spotify</li>
+                    <li><strong>Appel API</strong> : récupération des informations de votre profil</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section profil utilisateur -->
+        <section id="profile-section" class="card hidden">
+            <h2>✅ Connecté avec succès !</h2>
+
+            <div class="profile-card">
+                <img id="profile-image" src="" alt="Photo de profil" class="profile-image">
+                <div class="profile-info">
+                    <h3 id="profile-name">Nom</h3>
+                    <p id="profile-email" class="profile-email">email@example.com</p>
+                    <p class="profile-detail">ID : <span id="profile-id"></span></p>
+                    <p class="profile-detail">Pays : <span id="profile-country"></span></p>
+                    <p class="profile-detail">Type de compte : <span id="profile-product"></span></p>
+                </div>
+            </div>
+
+            <button id="logout-btn" class="btn btn-secondary">
+                Se déconnecter
+            </button>
+        </section>
+
+        <!-- Section écoute en cours -->
+        <section id="currently-playing-section" class="card hidden">
+            <h2>🎧 Écoute en cours</h2>
+            <div id="currently-playing-content">
+                <p class="loading-text">Chargement...</p>
+            </div>
+        </section>
+
+        <!-- Section top albums -->
+        <section id="top-albums-section" class="card hidden">
+            <h2>⭐ Albums les plus écoutés</h2>
+            <div id="top-albums-content">
+                <p class="loading-text">Chargement...</p>
+            </div>
+        </section>
+
+        <!-- Section logs pédagogiques -->
+        <section id="logs-section" class="card">
+            <h2>📋 Logs techniques (à des fins pédagogiques)</h2>
+            <div id="logs-container" class="logs-container">
+                <p class="log-empty">Les étapes du processus d'authentification s'afficheront ici...</p>
+            </div>
+        </section>
+
+        <!-- Section informations token -->
+        <section id="token-section" class="card hidden">
+            <h2>🔑 Informations sur le token</h2>
+            <div class="token-info">
+                <p><strong>Access Token (10 premiers caractères) :</strong> <code id="token-preview">...</code></p>
+                <p><strong>Type :</strong> <code id="token-type">Bearer</code></p>
+                <p><strong>Expire dans :</strong> <code id="token-expiry">3600</code> secondes</p>
+                <p><strong>Scopes :</strong> <code id="token-scopes">...</code></p>
+            </div>
+        </section>
+
+        <!-- Footer pédagogique -->
+        <footer>
+            <p>
+                ⚠️ Ceci est un exemple <strong>pédagogique</strong> pour comprendre OAuth 2.0 PKCE.
+            </p>
+            <p>
+                En production, utilisez un backend sécurisé pour gérer les tokens.
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

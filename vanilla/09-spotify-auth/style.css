@@ -1,0 +1,648 @@
+/* =========================================
+   SPOTIFY OAUTH PKCE - STYLES PÉDAGOGIQUES
+   ========================================= */
+
+/* ===========================
+   VARIABLES CSS
+   =========================== */
+
+:root {
+    /* Couleurs Spotify */
+    --spotify-green: #1DB954;
+    --spotify-green-hover: #1ed760;
+    --spotify-black: #191414;
+    --spotify-dark-gray: #121212;
+    --spotify-gray: #282828;
+    --spotify-light-gray: #b3b3b3;
+    --spotify-white: #ffffff;
+
+    /* Couleurs système */
+    --warning-bg: #ff6b35;
+    --warning-text: #fff;
+    --info-bg: rgba(29, 185, 84, 0.1);
+    --info-border: var(--spotify-green);
+    --error-bg: rgba(255, 107, 53, 0.1);
+    --error-border: #e22134;
+
+    /* Espacements */
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 40px;
+
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+
+    /* Border radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 9999px;
+}
+
+/* ===========================
+   RESET ET BASE
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--spotify-dark-gray);
+    color: var(--spotify-white);
+    line-height: 1.6;
+    padding: var(--spacing-md);
+    min-height: 100vh;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--spotify-black);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9em;
+}
+
+/* ===========================
+   CONTENEUR PRINCIPAL
+   =========================== */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   BANNIÈRE D'AVERTISSEMENT
+   =========================== */
+
+.warning-banner {
+    background-color: var(--warning-bg);
+    color: var(--warning-text);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.warning-banner h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.warning-banner p {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ===========================
+   EN-TÊTE
+   =========================== */
+
+header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+.subtitle {
+    color: var(--spotify-light-gray);
+    font-size: 1.05rem;
+}
+
+/* ===========================
+   CARDS (SECTIONS)
+   =========================== */
+
+.card {
+    background-color: var(--spotify-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.card h2 {
+    font-size: 1.6rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--spotify-white);
+}
+
+.card p {
+    color: var(--spotify-light-gray);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ===========================
+   FORMULAIRES
+   =========================== */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--spotify-white);
+    font-size: 0.95rem;
+}
+
+.input-field {
+    padding: var(--spacing-sm);
+    border: 2px solid var(--spotify-black);
+    border-radius: var(--radius-md);
+    background-color: var(--spotify-black);
+    color: var(--spotify-white);
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--spotify-green);
+}
+
+.input-field::placeholder {
+    color: var(--spotify-light-gray);
+    opacity: 0.6;
+}
+
+/* ===========================
+   BOUTONS
+   =========================== */
+
+.btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--spotify-green);
+    color: var(--spotify-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--spotify-green-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--spotify-light-gray);
+    color: var(--spotify-light-gray);
+}
+
+.btn-secondary:hover {
+    border-color: var(--spotify-white);
+    color: var(--spotify-white);
+}
+
+.btn-large {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.1rem;
+}
+
+/* ===========================
+   BOÎTES D'INFORMATION
+   =========================== */
+
+.info-box {
+    background-color: var(--info-bg);
+    border-left: 4px solid var(--info-border);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-md);
+}
+
+.info-box code {
+    display: block;
+    background-color: var(--spotify-black);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-sm);
+    word-break: break-all;
+    font-size: 0.85rem;
+    color: var(--spotify-green);
+}
+
+.info-text {
+    color: var(--spotify-light-gray);
+    margin-bottom: var(--spacing-md);
+}
+
+.info-text a {
+    color: var(--spotify-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.info-text a:hover {
+    text-decoration: underline;
+}
+
+.explanation-box {
+    background-color: var(--spotify-black);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-md);
+}
+
+.explanation-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--spotify-green);
+}
+
+.explanation-box ol {
+    margin-left: var(--spacing-md);
+    color: var(--spotify-light-gray);
+}
+
+.explanation-box li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.explanation-box code {
+    color: var(--spotify-green);
+}
+
+/* ===========================
+   PROFIL UTILISATEUR
+   =========================== */
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--spotify-black);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--spotify-green);
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--spotify-white);
+}
+
+.profile-email {
+    color: var(--spotify-green);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.profile-detail {
+    color: var(--spotify-light-gray);
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
+
+.profile-detail span {
+    color: var(--spotify-white);
+    font-weight: 600;
+}
+
+/* ===========================
+   LOGS PÉDAGOGIQUES
+   =========================== */
+
+.logs-container {
+    background-color: var(--spotify-black);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+}
+
+.log-entry {
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid var(--spotify-gray);
+    color: var(--spotify-light-gray);
+}
+
+.log-entry:last-child {
+    border-bottom: none;
+}
+
+.log-entry strong {
+    color: var(--spotify-green);
+}
+
+.log-empty {
+    color: var(--spotify-light-gray);
+    font-style: italic;
+    text-align: center;
+}
+
+/* ===========================
+   INFORMATIONS TOKEN
+   =========================== */
+
+.token-info {
+    background-color: var(--spotify-black);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.token-info p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--spotify-light-gray);
+}
+
+.token-info code {
+    color: var(--spotify-green);
+}
+
+/* ===========================
+   ÉTATS HIDDEN
+   =========================== */
+
+.hidden {
+    display: none;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+footer {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    color: var(--spotify-light-gray);
+    border-top: 1px solid var(--spotify-gray);
+    margin-top: var(--spacing-xl);
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: var(--spacing-xs) 0;
+}
+
+footer strong {
+    color: var(--warning-bg);
+    font-weight: 700;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: var(--spacing-sm);
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        padding: var(--spacing-md);
+    }
+
+    .card h2 {
+        font-size: 1.3rem;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-large {
+        width: 100%;
+    }
+
+    .explanation-box ol {
+        margin-left: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .warning-banner h3 {
+        font-size: 1rem;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===========================
+   ÉCOUTE EN COURS
+   =========================== */
+
+.currently-playing-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--spotify-black);
+    border-radius: var(--radius-md);
+}
+
+.album-cover {
+    width: 150px;
+    height: 150px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    box-shadow: var(--shadow-md);
+}
+
+.track-info {
+    flex: 1;
+}
+
+.track-status {
+    font-size: 0.85rem;
+    color: var(--spotify-green);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.track-name {
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--spotify-white);
+}
+
+.track-name a {
+    color: var(--spotify-white);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.track-name a:hover {
+    color: var(--spotify-green);
+}
+
+.track-artist {
+    font-size: 1.1rem;
+    color: var(--spotify-light-gray);
+    margin-bottom: var(--spacing-xs);
+}
+
+.track-album {
+    font-size: 0.95rem;
+    color: var(--spotify-light-gray);
+}
+
+.loading-text {
+    color: var(--spotify-light-gray);
+    text-align: center;
+    padding: var(--spacing-md);
+    font-style: italic;
+}
+
+.error-text {
+    color: var(--error-border);
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+/* ===========================
+   TOP ALBUMS
+   =========================== */
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.album-card {
+    background-color: var(--spotify-black);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.album-card:hover {
+    background-color: var(--spotify-gray);
+    transform: translateY(-4px);
+}
+
+.album-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    margin-bottom: var(--spacing-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.album-info {
+    text-align: center;
+}
+
+.album-name {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--spotify-white);
+    font-weight: 600;
+}
+
+.album-name a {
+    color: var(--spotify-white);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.album-name a:hover {
+    color: var(--spotify-green);
+}
+
+.album-artist {
+    font-size: 0.9rem;
+    color: var(--spotify-light-gray);
+}
+
+/* ===========================
+   RESPONSIVE - NOUVELLES SECTIONS
+   =========================== */
+
+@media (max-width: 768px) {
+    .currently-playing-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .album-cover {
+        width: 120px;
+        height: 120px;
+    }
+
+    .albums-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .album-cover {
+        width: 100px;
+        height: 100px;
+    }
+
+    .track-name {
+        font-size: 1.1rem;
+    }
+
+    .track-artist {
+        font-size: 1rem;
+    }
+
+    .albums-grid {
+        grid-template-columns: 1fr;
+    }
+}
